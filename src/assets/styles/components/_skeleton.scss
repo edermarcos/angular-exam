@@ -1,0 +1,33 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+@keyframes placeHolderShimmer {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    background-position: -468px 0
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    background-position: 468px 0
+  }
+}
+
+.mkt-skeleton {
+  transition: all .3s ease-in-out;
+  will-change: transform;
+  animation: placeHolderShimmer 1s linear infinite forwards;
+  -webkit-backface-visibility: hidden;
+  background: linear-gradient(90deg, rgb(236,239,243) 0%, rgb(220, 224, 229) 28%, rgb(236,239,243) 33%);
+  background-size: 800px 104px;
+
+  &--text {
+    &::after {
+      content: "|";
+      opacity: 0;
+    }
+  }
+}
+
+

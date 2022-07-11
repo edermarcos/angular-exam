@@ -1,0 +1,81 @@
+@import '../base/mixins';
+@import '../base/variables';
+
+// Bootstrap
+@import '~node_modules/bootstrap/scss/mixins';
+
+// Dashboard
+.es-dashboard {
+  .mkt-empty__img {
+    @include max-h(6rem !important);
+  }
+}
+
+// Human Resources
+.es-request-weekly {
+  .mkt-empty__img {
+    @include max-h(4rem !important);
+  }
+}
+
+.es-human-resources {
+  .mkt-empty__img {
+    @include max-h(13rem !important);
+  }
+}
+
+// Requests
+.es-requests-absences {
+  .mkt-empty__img {
+    @include max-h(10rem !important);
+
+    @include media-breakpoint-up(lg) {
+      @include max-h(8rem !important);
+    }
+  }
+}
+
+// Teams
+.es-teams-requests-absences {
+  .mkt-empty__img {
+    @include max-h(10rem !important);
+
+    @include media-breakpoint-up(lg) {
+      @include max-h(6rem !important);
+    }
+  }
+}
+
+.es-teams-requests {
+  .mkt-empty__img {
+    @include max-h(10rem !important);
+  }
+}
+
+.es-teams-requests-detail {
+  .mkt-empty__img {
+    @include max-h(4rem !important);
+  }
+}
+
+.es-widget-tradeshows {
+  .mkt-empty__img {
+    @include max-h(12rem !important);
+  }
+}
+
+.es-notifications {
+  .mkt-empty__img {
+    @include max-h(10rem !important);
+  }
+}
+
+.empty-state--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  app-empty-state {
+    width: 100%;
+  }
+}

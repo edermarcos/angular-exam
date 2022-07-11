@@ -1,0 +1,93 @@
+@import 'src/assets/styles/base/variables';
+@import 'src/assets/styles/base/mixins';
+
+.equipment-section {
+  padding: 0 1.5rem 1.5rem;
+  margin-bottom: 0;
+
+  .s-sent {
+    .stats-item-icon {
+      background-color: $info-100;
+      color: $info;
+    }
+  }
+
+  .s-approved {
+    .stats-item-icon {
+      background-color: $warning-100;
+      color: $warning;
+    }
+  }
+
+  .s-delivered {
+    .stats-item-icon {
+      background-color: rgba($equipment, 0.16);
+      color: $equipment;
+    }
+  }
+
+  .s-declined {
+    .stats-item-icon {
+      background-color: $danger-100;
+      color: $danger;
+    }
+  }
+
+  .s-canceled {
+    .stats-item-icon {
+      background-color: rgba($gray-200, 0.25);
+      color: $gray-200;
+    }
+  }
+}
+
+// App Request Card Proccess
+.arc-process {
+  min-height: 292px;
+}
+
+// App Request Card Historical
+.arc-historical {
+  $mh: 292px;
+  min-height: calc(#{$mh} * 2);
+}
+
+.arc-process,
+.arc-historical {
+  // App Asset Item
+  .aa-item {
+    border-bottom: 1px solid rgba($gray-100, 0.75);
+    margin-bottom: 1rem;
+
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.notes-wrap {
+  .notes-item {
+    @include card();
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 14px;
+      text-align: right;
+      color: $gray-300;
+    }
+
+    &__author {
+      font-weight: 600;
+      color: $primary;
+      font-size: 12px;
+      text-align: right;
+    }
+  }
+}

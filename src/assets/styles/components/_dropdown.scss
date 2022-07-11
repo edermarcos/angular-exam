@@ -1,0 +1,139 @@
+@import 'src/assets/styles/base/variables';
+@import 'src/assets/styles/base/mixins';
+
+// Bootstrap
+@import '~node_modules/bootstrap/scss/mixins';
+
+// Font Size
+@import '~node_modules/rfs/scss';
+
+.mt-select {
+  min-width: 200px;
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem;
+
+  .dropdown-header {
+    padding: 0;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    @include font-size(0.875rem);
+    font-weight: bold;
+    color: $primary;
+    margin-top: 1rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .dropdown-item {
+    @include font-size(0.875rem);
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    color: $gray-500;
+
+    &--active,
+    &:hover {
+      background: $primary-10;
+      color: $gray-900;
+      font-weight: 600;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .dropdown-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+
+    &__item {
+      margin-right: 1rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Se usa en el dropdown
+// En autocomplete
+.mt-dropdown {
+  &__list {
+    overflow: hidden;
+    background: white;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  &__options {
+    @include dsm-transition(all, 0.1s, ease);
+    border: 1px solid $gray-100;
+    margin-top: 0.25rem;
+    padding: 0.5rem 0;
+    width: 0;
+    opacity: 0;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 100;
+    max-height: 0;
+  }
+
+  &--active {
+    opacity: 1;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+}
+
+/*
+* Estilos para los dropdowns usados en la barra del app page
+*/
+.mt-dropdown-select__content {
+  @include font-size(0.875rem);
+  @include mr-last(1rem);
+  white-space: nowrap;
+  font-weight: 600;
+  color: $gray-400;
+  cursor: pointer;
+
+  // Para no tener problemas con los botones
+  > span,
+  > i {
+    color: $primary;
+  }
+
+  > span {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    text-transform: capitalize;
+  }
+
+  .dropdown-item {
+    text-transform: capitalize;
+  }
+}
+
+// Estilos para el dropdown de los filtros
+.dropdown-filter {
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $gray-400;
+
+  > span,
+  > i {
+    margin-left: 0.25rem;
+    color: $primary;
+  }
+}

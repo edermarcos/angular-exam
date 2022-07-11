@@ -1,0 +1,31 @@
+// Base
+@import 'base/variables';
+@import 'base/reboot';
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/shadows';
+
+// Modules
+//@import 'modules/scrollbar';
+//@import 'modules/fonts';
+
+// Vendors
+@import '~bootstrap/scss/bootstrap';
+@import '~animate.css/animate.min.css';
+
+// 3. Base stuff
+//@import 'base/base';
+//@import 'base/fonts';
+@import 'base/helpers';
+
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    width: 550px;
+  }
+}

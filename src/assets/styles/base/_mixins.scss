@@ -1,0 +1,328 @@
+@import 'variables';
+@import 'shadows';
+
+/**
+ * Width con max
+ *
+ * @param $width - Ancho del componente padre
+ *
+ * Ex. @include max-w(6rem)
+ *
+ */
+@mixin max-w($width) {
+  width: $width;
+  max-width: $width;
+}
+
+/**
+ * Width con min
+ *
+ * @param $width - Ancho del componente padre
+ *
+ * Ex. @include min-w(6rem)
+ *
+ */
+@mixin min-w($width) {
+  width: $width;
+  min-width: $width;
+}
+
+/**
+ * Width con max y min
+ *
+ * @param $width - Ancho del componente padre
+ *
+ * Ex. @include mm-w(6rem)
+ *
+ */
+@mixin mm-w($width) {
+  width: $width;
+  max-width: $width;
+}
+
+/**
+ * Height mas max-width
+ *
+ * @param $height - Alto del componente padre
+ *
+ * Ex. @include max-h(5rem)
+ *
+ */
+@mixin max-h($height) {
+  height: $height;
+  max-height: $height;
+}
+
+/**
+ * Height con min
+ *
+ * @param $height - Alto del componente padre
+ *
+ * Ex. @include min-h(5rem)
+ *
+ */
+@mixin min-h($height) {
+  height: $height;
+  min-height: $height;
+}
+
+/**
+ * Height con max y min
+ *
+ * @param $height - Alto del componente padre
+ *
+ * Ex. @include mm-h(4rem)
+ *
+ */
+@mixin mm-h($height) {
+  height: $height;
+  max-height: $height;
+  min-height: $height;
+}
+
+/**
+ * width y height
+ *
+ * @param $width - Ancho del componente padre
+ * @param $height (Optional) - Alto del componente padre
+ *
+ * Ex. @include mm-wh(4rem)
+ *
+ */
+@mixin wh($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+/**
+ * width y height con max
+ *
+ * @param $width - Ancho del componente padre
+ * @param $height (Optional) - Alto del componente padre
+ *
+ * Ex. @include max-wh(5rem)
+ *
+ */
+@mixin max-wh($width, $height: $width) {
+  width: $width;
+  max-width: $width;
+
+  height: $height;
+  max-height: $height;
+}
+
+/**
+ * Width y Height con min
+ *
+ * @param $width - Ancho del componente padre
+ * @param $height (Optional) - Alto del componente padre
+ *
+ * Ex. @include min-wh(4rem)
+ *
+ */
+@mixin min-wh($width, $height: $width) {
+  min-width: $width;
+  width: $width;
+
+  min-height: $height;
+  height: $height;
+}
+
+/**
+ * Width y Height con max y min
+ *
+ * @param $width - Ancho del componente padre
+ * @param $height (Optional) - Alto del componente padre
+ *
+ * Ex. @include mm-wh(5rem)
+ *
+ */
+@mixin mm-wh($width, $height: $width) {
+  min-width: $width;
+  width: $width;
+  max-width: $width;
+
+  min-height: $height;
+  height: $height;
+  max-height: $height;
+}
+
+// Variables por default para las animaciones
+$default-time: 0.25s;
+$default-type: ease-out;
+
+/**
+ * Transition
+ *
+ * Utileria para evitar colorcar muchas lineas en una transicion
+ *
+ * @param $args - Propiedad que sera animada, default: all
+ * @param $time (Optional) - Duracion de la transicion
+ * @param $type (Optional) - Personaliza la transicion
+ *
+ * Ex: @include dsm-transition(background)
+ *
+ */
+@mixin dsm-transition($args: all, $duration: $default-time, $type: $default-type) {
+  -webkit-transition: $args $duration $default-type;
+  -ms-transition: $args $duration $default-type;
+  -o-transition: $args $duration $default-type;
+  transition: $args $duration $default-type;
+}
+
+// Todo Agregar docs
+@mixin cubic-transition($args) {
+  @include dsm-transition($args, 0.6s, cubic-bezier(0.23, 1, 0.32, 1));
+}
+
+/**
+ * Margin Bottom Last
+ *
+ * Utileria para items que necesitan separarse entre si
+ *
+ * @param $size - Tamaño del margen
+ *
+ * Ex: @include mb-last(1rem)
+ *
+ */
+@mixin mb-last($size) {
+  margin-bottom: $size;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Margin Right Last
+ *
+ * Utileria para items donde se coloca un margin right y el ultimo no
+ *
+ * @param $size - Tamaño del margen
+ *
+ * Ex: @include mr-last(1rem)
+ *
+ */
+@mixin mr-last($size) {
+  margin-right: $size;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+/**
+ * Background Image
+ *
+ * Se ocupa para cuando se usa una imagen como fondo de un div
+ *
+ * @param $size - Puede ser cover, tamaño en px, auto, etc.
+ * por default sera center
+ * @param $position - Posicion de la imagen, por default center
+ *
+ * Ex: @include bg-image()
+ *
+ */
+@mixin bg-image($size: cover, $position: center) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+  background-position: $position;
+  background-repeat: no-repeat;
+}
+
+/**
+ * Animacion estilo Skeleton
+ *
+ * La animacion necesita del ancho del padre para calcular
+ * una animacion mas fluida
+ *
+ * @param $width - Ancho del contenedor donde se renderizara
+ *
+ * Ex: @include bg-skeleton(pxToRem(100px));
+ *
+ */
+@mixin bg-skeleton($width) {
+  will-change: transform;
+  animation: placeHolderShimmer 1s linear infinite forwards;
+  -webkit-backface-visibility: hidden;
+  background: linear-gradient(90deg, darken($gray-50, 2) 8%, darken($gray-50, 7) 18%, darken($gray-50, 2) 33%);
+  background-size: calc(#{$width} * 3) 100%;
+
+  @keyframes placeHolderShimmer {
+    0% {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      background-position: calc((#{$width} * 2) * -1) 0
+    }
+    to {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      background-position: calc((#{$width} * 2)) 0
+    }
+  }
+}
+
+/**
+ * Limita el numero de rows a mostrar dentro de un parrafo
+ *
+ * @param $lines - Numero de lineas a mostrar
+ * @param $line-height (Optional) - Alto de la fuente
+ *
+ * Ex. @include truncate-lines(4)
+ *
+ */
+@mixin truncate-lines($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+//@mixin max-lines($font-size, $max-lines) {
+//  line-height: 1.5;
+//  @include mm-h(calc(#{$font-size} * (1.5 * #{$max-lines})));
+//  @include truncate-lines($max-lines);
+//}
+
+/**
+* Convierte a circulo un elemento
+*
+* @param $size - Tamaño del elemento
+* @param $bg (Optional) Background del componente
+*
+* Ex. @include rounded(0.5rem)
+*
+*/
+@mixin rounded($size, $bg: transparent) {
+  @include mm-wh($size);
+  border-radius: 50%;
+  background-color: $bg;
+}
+
+/**
+* Agrega text ellipsis a un text
+*
+* Ex. @include ellipsis();
+*
+*/
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/**
+* Estilos basicos para un card
+*
+* @param $p: Padding
+*
+* Ex. @include card();
+*/
+@mixin card($p: 1rem, $br: 0.5rem, $bg: $white) {
+  @extend .dsm-dark-shadow-1;
+  border-radius: $br;
+  background: $bg;
+  padding: $p;
+}

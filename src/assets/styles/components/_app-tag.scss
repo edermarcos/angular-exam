@@ -1,0 +1,114 @@
+@import 'src/assets/styles/base/reboot';
+@import 'src/assets/styles/base/mixins';
+@import 'src/assets/styles/base/helpers';
+
+// Responsive Font Size
+@import 'node_modules/rfs/scss';
+
+.app-tag {
+  /*
+  * Status del componente
+  */
+  &--mb {
+    // Margen para que no este pegado con el resto de componentes
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    border: 1px solid $input-border-color;
+    border-radius: 0.25rem;
+    display: flex;
+    // Provaca que se desborde
+    flex-wrap: wrap;
+    align-items: center;
+    // Es para poder acomodar el icono y la lista de resultados
+    position: relative;
+    padding: 0.25rem 0.5rem 0 0.5rem;
+
+    &__item {
+      @include font-size(0.875rem);
+      display: flex;
+      font-weight: 600;
+      align-items: center;
+      margin-right: 0.5rem;
+      border-radius: 0.25rem;
+      background-color: rgba($primary, 0.16);
+      margin-bottom: 0.25rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      p {
+        margin: 0.25rem 0.5rem 0.25rem 1rem;
+      }
+    }
+
+    input {
+      flex-grow: 1;
+      min-width: 200px;
+      width: auto;
+      height: 2rem;
+      border: 0;
+      padding-left: 0;
+      margin-bottom: 0.25rem;
+    }
+
+    &__list {
+      @include dsm-transition(all 0.1s ease);
+      border: 1px solid $gray-100;
+      padding: 0.5rem;
+      width: 0;
+      opacity: 0;
+      overflow-y: auto;
+      position: absolute;
+      // Se posiciona hasta abajo mas el espacio
+      top: calc(#{100%} + 0.25rem);
+      left: 0;
+      z-index: 100;
+      max-height: 0;
+      border-radius: 0.25rem;
+      background-color: white;
+
+      &_item {
+        @include font-size(0.875rem);
+        border-radius: 0.25rem;
+        margin-bottom: 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        line-height: 2.5rem;
+        cursor: pointer;
+        color: $gray-500;
+
+        &:hover {
+          background: $primary-10;
+          color: $gray-900;
+          font-weight: 600;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &--empty {
+          color: $gray-400;
+          cursor: auto;
+
+          &:hover {
+            color: $gray-400;
+            background-color: transparent;
+            font-weight: normal;
+          }
+        }
+      }
+
+      &--active {
+        opacity: 1;
+        width: 100%;
+        // Cada item mide 2.5rem mas los espacios de 0.5rem
+        max-height: calc((2.5rem * 3) + (0.5rem * 4));
+        overflow-y: auto;
+      }
+    }
+  }
+}

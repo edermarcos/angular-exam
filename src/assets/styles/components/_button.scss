@@ -1,0 +1,192 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+@import '../base/variables';
+@import '../base/mixins';
+
+.mkt-action-btn {
+  @include dsm-transition(background);
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+  line-height: 2.25rem;
+  margin-right: 0.5rem;
+  background-color: transparent;
+  border: 0;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($gray-900, 0.1);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:disabled {
+    color: $gray-200;
+
+    &:hover {
+      background-color: transparent;
+      cursor: not-allowed;
+    }
+  }
+
+  i {
+    margin-right: 0.5rem;
+  }
+
+  &.primary {
+    color: $primary;
+
+    &:hover {
+      background-color: rgba($primary, 0.1);
+    }
+
+    &:disabled {
+      color: rgba($primary, 0.5);
+
+      &:hover {
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+
+    &.solid {
+      background-color: $primary;
+      color: white;
+
+      &:hover {
+        background-color: darken($primary, 4);
+      }
+    }
+  }
+
+  &.danger {
+    color: $danger;
+
+    &:hover {
+      background-color: rgba($danger, 0.1);
+    }
+
+    &:disabled {
+      color: lighten($danger, 15);
+
+      &:hover {
+        cursor: not-allowed;
+        background-color: transparent;
+      }
+    }
+
+    &.solid {
+      background-color: $danger;
+      color: white;
+
+      &:hover {
+        background-color: darken($danger, 4);
+      }
+
+      &:disabled {
+        background-color: lighten($danger, 15);
+
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.mkt-btn {
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.25rem 1rem;
+  font-size: 14px;
+  border-width: 2px;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+$bg-hover: #f2f2f2;
+$bg-hover-dark: #e9eaea;
+// Todo Eliminar esta clase
+.mkt-icon {
+  @include mm-wh(2.5rem);
+  @include dsm-transition(background-color 0.2s ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 0.25rem;
+  background: transparent;
+  border: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    text-decoration: none; // Para cuando se usa como link
+    cursor: pointer;
+    background-color: $bg-hover; // Para fondos blancos
+
+    i {
+      color: $gray-900;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  i {
+    font-size: 1rem;
+    color: $gray-400;
+  }
+
+  &.darken {
+    &:hover {
+      background-color: $bg-hover-dark;
+    }
+  }
+
+  &.lighten {
+    i {
+      color: white;
+    }
+
+    &:hover {
+      background-color: rgba(white, 0.3);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    i {
+      color: $gray-200;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &.xs {
+    @include mm-wh(28px);
+    margin-right: 0.25rem;
+
+    i {
+      font-size: 12px;
+    }
+  }
+}

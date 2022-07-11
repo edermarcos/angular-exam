@@ -1,0 +1,47 @@
+@import 'src/assets/styles/base/mixins';
+@import 'src/assets/styles/base/functions';
+
+// Bootstrap
+@import '~node_modules/bootstrap/scss/mixins';
+
+// Responsive Font Size
+@import 'node_modules/rfs/scss';
+
+.op-card {
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+  text-decoration: none;
+  display: flex;
+  background: white;
+
+  &__image {
+    @include mm-w(pxToRem(215px));
+    @include mm-h(pxToRem(120px));
+    @include bg-image();
+  }
+
+  &__metadata {
+    padding: 0.5rem pxToRem(12px);
+
+    > span {
+      @include font-size(pxToRem(14px));
+      line-height: pxToRem(22px);
+      display: block;
+      font-weight: 600;
+      text-transform: capitalize;
+      margin-bottom: pxToRem(4px);
+    }
+
+    > p,
+    > a {
+      @include font-size(pxToRem(12px));
+      color: $gray-400;
+      line-height: pxToRem(20px);
+    }
+
+    > p {
+      margin-bottom: pxToRem(10px);
+    }
+  }
+}

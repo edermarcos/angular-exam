@@ -1,0 +1,366 @@
+@import 'src/assets/styles/base/variables';
+@import 'src/assets/styles/base/shadows';
+@import 'src/assets/styles/base/mixins';
+@import 'src/assets/styles/base/reboot';
+@import 'src/assets/styles/base/functions';
+
+// Bootstrap
+@import '~node_modules/bootstrap/scss/mixins';
+
+// Font Size
+@import '~node_modules/rfs/scss';
+
+.mt-icon-input,
+.mkt-form-group {
+  input,
+  select,
+  textarea {
+    &:hover {
+      border-color: $gray-500;
+    }
+
+    &:disabled {
+      color: $gray-300;
+
+      &:hover, &:focus {
+        border-color: $gray-100;
+      }
+    }
+  }
+
+  //input[type="date"],
+  //input[type="time"] {
+  //  &::-webkit-inner-spin-button {
+  //    display: none;
+  //  }
+  //
+  //  &::-webkit-calendar-picker-indicator {
+  //    opacity: 0;
+  //    cursor: pointer;
+  //  }
+  //}
+}
+
+// Todo Eliminar todos los mkt
+.mkt-form-group,
+.mt-form-group-label {
+  > label {
+    color: $gray-900;
+    font-weight: 600;
+    @include font-size(0.875rem);
+    text-transform: capitalize;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.mt-form-label {
+  color: $gray-900;
+  font-weight: 600;
+  @include font-size(0.875rem);
+  text-transform: capitalize;
+  margin-bottom: 0.25rem;
+}
+
+.mkt-form-group {
+  margin-bottom: 1rem;
+  width: 100%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  textarea {
+    resize: none;
+  }
+}
+
+// Todo Analizar si usar un componente o solo una clase scss
+// Estilos para el texto de ayuda de cada input
+.dsm-help-text {
+  i {
+    margin-right: 0.25rem;
+    color: $primary;
+  }
+}
+
+
+// Es para inputs que necesitan un boton a lado
+// El contenedor actua como si fuera un input
+.mt-form-input-button {
+  display: flex;
+  align-items: center;
+
+  // Se heredan estilos del input
+  border-radius: $input-border-radius;
+  border: 1px solid $input-border-color;
+  background: $input-bg;
+
+  &:hover {
+    border-color: $gray-500;
+  }
+
+  // Se eliminan estilos basicos del input y se limita el tamaño para evitar
+  // problemas con el border del input en el estado focus
+  > input {
+    max-height: calc(100% - 2px);
+    border: 0;
+  }
+
+  // Para cuando se quiere mostrar icono mas boton
+  > i {
+    @include mm-w(2rem);
+    text-align: center;
+  }
+
+  // Se coloca esta clase para poder usar la clase .is-valid
+  // Solo se eliminan los espacios
+  &.form-control {
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    // Se agrega un espacio para que el boton no este pegado a la derecha
+    &:not(.is-invalid) {
+      padding-right: pxToRem(4px);
+    }
+  }
+}
+
+.mt-icon-input {
+  $padding-icon: 0.5rem;
+  width: 100%;
+  position: relative;
+
+  // Se oculta los iconos por default
+  input[type='date'],
+  input[type='time'] {
+    background: none;
+  }
+
+  input {
+    // Padding + 1 rem que mide el icono
+    padding-right: calc((#{ $padding-icon } * 2) + 1rem);
+
+  }
+
+  i {
+    // Oculta el icono por default
+    display: flex;
+    justify-content: center;
+    width: 1.5rem;
+    background: white;
+    position: absolute;
+    right: $padding-icon;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $primary;
+  }
+}
+
+.mkt-chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  // Todo Checar esto despues
+  //padding-top: 0.5rem;
+
+  .mkt-chip {
+    @include dsm-transition(all);
+    display: flex;
+    align-items: center;
+    background-color: rgba($primary, 0.1);
+    border-radius: 0.25rem;
+    padding: 0.25rem 1rem;
+    margin: 0 0.5rem 0.5rem 0;
+    color: $primary;
+    border: 1px solid transparent;
+
+    &:hover {
+      cursor: pointer;
+      background-color: transparent;
+      border-color: $primary;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &__thumbnail {
+      @include mm-wh(1.5rem);
+      @include bg-image();
+      margin-left: 0.25rem;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+    &__text {
+      @include font-size(0.875rem);
+      font-weight: 600;
+      line-height: 1.375rem;
+    }
+
+    i {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      @include font-size(1.125rem);
+      cursor: pointer;
+      line-height: 1.25;
+    }
+
+    &.thumbnail {
+      padding-left: 0;
+    }
+
+    &.icon {
+      padding-right: 0;
+    }
+
+    &.active-tab {
+      background-color: $primary;
+    }
+  }
+}
+
+.mkt-autocomplete {
+  position: relative;
+
+  input {
+    margin-bottom: 0.5rem;
+
+    &.is-invalid {
+      // Cuando se coloca un small, los demas tienen 0.25rem
+      margin-bottom: 0;
+    }
+  }
+
+  &__results {
+    @extend .dsm-light-shadow-1;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    top: calc(24px + 0.5rem + 50px + 0.25rem);
+
+    &_item {
+      &_img {
+        @include mm-wh(2rem);
+        @include bg-image();
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+
+      &:hover {
+        background-color: darken(white, 4%);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &.active {
+    .mkt-autocomplete__results {
+      height: auto;
+      margin-bottom: 1rem;
+
+      &_item {
+        @include max-h(3rem);
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.mkt-drop {
+  @include max-h(250px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed $gray-200;
+  background-color: $input-bg;
+  margin-bottom: 1rem;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: $gray-400;
+
+    .label {
+      display: inline-block;
+      font-weight: bold;
+      margin-bottom: 0;
+      @include font-size(0.9rem);
+
+      &:hover {
+        cursor: pointer;
+        color: $primary;
+      }
+    }
+
+    p {
+      @include font-size(0.8rem);
+    }
+
+    i {
+      @include font-size(3rem);
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__preview {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    &_image {
+      @include bg-image();
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      filter: brightness(60%);
+    }
+
+    &_remove {
+      position: absolute;
+      z-index: 10;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+  }
+
+  &.onDrag,
+  &.onDrop {
+    border-color: $primary;
+  }
+}
+
+.form-group {
+  select {
+    -webkit-appearance: none;
+    line-height: 1.25;
+
+    + i {
+      @include max-h(1rem);
+      color: $primary;
+      float: right;
+      margin-top: -28px;
+      pointer-events: none;
+      padding-right: 0.5rem;
+    }
+  }
+}
+
+// Todo: Convertir en clase o componente reutilizable
+.mkt-help-text {
+  position: absolute;
+  right: 0;
+  padding-left: 0.5rem;
+  background-color: white;
+}

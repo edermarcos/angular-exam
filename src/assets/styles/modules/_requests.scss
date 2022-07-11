@@ -1,0 +1,218 @@
+@import '../base/variables';
+@import '../base/mixins';
+@import 'src/assets/styles/components/empty-states';
+
+.widget-digest {
+  padding: 0 1.5rem 1.5rem;
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  &--no-padding-y {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__stats {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    &__icon {
+      @include mm-wh(48px);
+      text-align: center;
+      margin-right: 0.5rem;
+      border-radius: 0.5rem;
+
+      i {
+        line-height: 48px;
+        font-size: 1.5rem;
+      }
+    }
+
+    &__data {
+      p,
+      span {
+        text-transform: capitalize;
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+
+      span {
+        font-size: 0.75rem;
+        color: $gray-400;
+        line-height: 1rem;
+      }
+    }
+
+    &--permissions {
+      .widget-digest__stats__icon {
+        background: rgba($permissions, 0.16);
+        color: $permissions;
+      }
+    }
+
+    &--vacations {
+      .widget-digest__stats__icon {
+        background: rgba($vacations, 0.16);
+        color: $vacations;
+      }
+    }
+
+    &--pto {
+      .widget-digest__stats__icon {
+        background: rgba($pto, 0.16);
+        color: $pto;
+      }
+
+      .widget-digest__stats__data {
+        p {
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &--absences {
+      .widget-digest__stats__icon {
+        background: rgba($absences, 0.16);
+        color: $absences;
+      }
+    }
+  }
+}
+
+.widget-absences,
+.widget-requests {
+  height: 100%;
+  overflow: auto;
+
+  &--empty {
+    @extend .empty-state--center;
+  }
+
+  &__item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid $gray-100;
+
+    &:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.stats-section {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 1.5rem;
+
+  .stats-item {
+    padding: 0.5rem 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+
+    &-icon {
+      @include mm-wh(48px);
+      text-align: center;
+      border-radius: 0.5rem;
+
+      i {
+        line-height: 48px;
+        font-size: 1.5rem;
+      }
+
+      &.-permissions {
+        background: rgba($permissions, 0.16);
+        color: $permissions;
+      }
+
+      &.-vacations {
+        background: rgba($vacations, 0.16);
+        color: $vacations;
+      }
+
+      &.-pto {
+        background: rgba($pto, 0.16);
+        color: $pto;
+      }
+
+      &.-absences {
+        background: rgba($absences, 0.16);
+        color: $absences;
+      }
+    }
+
+    &-data {
+      flex-grow: 1;
+
+      p,
+      span {
+        text-transform: capitalize;
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+
+      span {
+        font-size: 0.75rem;
+        color: $gray-400;
+        line-height: 1rem;
+      }
+    }
+
+    &.s-action {
+      &:hover {
+        cursor: pointer;
+        background-color: rgba($gray-100, 0.2);
+      }
+
+      &.s-selected {
+        background-color: rgba($primary, 0.05);
+      }
+    }
+  }
+}
+
+// Es para jobs y para requests master
+.request-item {
+  @include dsm-transition(background-color);
+  min-height: 120px;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: capitalize;
+  color: $gray-300;
+
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: $primary-10;
+    color: $primary;
+
+    i {
+      color: rgba($primary, 0.4);
+    }
+  }
+
+  i {
+    position: absolute;
+    right: 1rem;
+    font-size: 60px;
+    color: $gray-100;
+  }
+}

@@ -1,0 +1,56 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+/* Input Loader */
+.mt-il {
+  @include mm-wh(2rem);
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__loader,
+  &__loader:after {
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__loader {
+    border-top: 3px solid rgba($primary, 0.2);
+    border-right: 3px solid rgba($primary, 0.2);
+    border-bottom: 3px solid rgba($primary, 0.2);
+    border-left: 3px solid $primary;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: mt-il__animation 0.5s infinite linear;
+    animation: mt-il__animation 0.5s infinite linear;
+  }
+
+  @-webkit-keyframes mt-il__animation {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes mt-il__animation {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}
+

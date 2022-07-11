@@ -1,0 +1,33 @@
+@import 'src/assets/styles/base/helpers';
+@import '../base/variables';
+
+.mkt-table {
+  &__options {
+    text-align: center;
+
+    > span {
+      margin-right: 0.5rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  tr {
+    background-color: white;
+
+    &:nth-child(2n) {
+      background-color: rgba($gray-200, 0.1);
+    }
+
+    td, th {
+      @extend .mkt-text-ellipsis;
+      vertical-align: middle;
+    }
+
+    th {
+      text-align: center;
+    }
+  }
+}

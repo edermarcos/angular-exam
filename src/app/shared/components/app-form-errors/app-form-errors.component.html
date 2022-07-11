@@ -1,0 +1,12 @@
+<div class="invalid-feedback"
+     [class.d-block]="isActive">
+  <div class="text-left"
+       *ngFor="let validation of validations">
+    <div *ngIf="!_.isEmpty(errors) && errors[validation?.type]"
+         class="animate__animated animate__headShake">
+<!--      <i [class]="config.prefixIconRegular + 'exclamation-circle'"></i>-->
+
+      {{ validation.message }}
+    </div>
+  </div>
+</div>

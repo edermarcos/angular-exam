@@ -1,0 +1,25 @@
+@import 'src/assets/styles/base/variables';
+
+*:not(body) {
+  // Styles for scrollbar Firefox and Edge
+  scrollbar-width: auto;
+  scrollbar-color: transparent;
+
+  // Rest of Explorers
+  &::-webkit-scrollbar {
+    width: 0.625rem;
+    height: 0.625rem;
+  }
+
+  &:hover {
+    scrollbar-color: rgba($gray-600, 0.40) rgba($gray-600, 0.16); /* scroll thumb & track */
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba($gray-600, 0.40);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba($gray-600, 0.16);
+    }
+  }
+}

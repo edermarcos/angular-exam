@@ -1,0 +1,46 @@
+@import '../base/helpers';
+@import 'src/assets/styles/base/variables';
+@import 'src/assets/styles/base/shadows';
+
+.mkt-card {
+  @extend .dsm-light-shadow-1;
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  &--button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: $primary;
+    justify-content: center;
+
+    &_icon {
+      @include mm-wh(56px);
+      display: flex;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba($primary, 0.1);
+
+      i {
+        font-size: 1.25rem;
+      }
+    }
+
+    p {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    &.vertical {
+      flex-direction: column;
+
+      .mkt-card--button_icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

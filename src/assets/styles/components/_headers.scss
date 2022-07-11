@@ -1,0 +1,16 @@
+@import '../base/variables';
+
+h4 {
+  //font-weight: 600;
+}
+
+.mt-header-1 {
+  color: $secondary;
+  font-family: $font-primary;
+  font-weight: 600;
+}
+
+.mt-header-2 {
+  font-family: $font-secondary;
+  text-transform: uppercase;
+}

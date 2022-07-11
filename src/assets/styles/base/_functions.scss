@@ -1,0 +1,42 @@
+$base-url: '/assets/';
+
+/**
+ * Retorna url de un asset
+ *
+ * @param $type - Tipo de folder dentro de equipments
+ * @param $path - path del recurso (En caso de tener sub-rutas) o
+ *  nombre del archivo
+ * @param $base (Optional) - url donde se encuentra la carpeta equipments
+ *
+ * Ex. @include asset('files/ai.svg')
+ *
+ */
+@function asset($type, $path, $base: $base-url,) {
+  @return url($base + $type + $path);
+}
+
+/**
+ * Retorna url de la imagen
+ *
+ * @param $path - path de la imagen(En caso de tener sub-rutas)
+ * o nombre del archivo
+ *
+ * Ex. @include image(logo)
+ *
+ */
+@function image($path) {
+  @return asset('images/', $path);
+}
+
+/**
+ * Convert px to rem
+ *
+ * @param $size - Valor en px para convertir en rem
+ *
+ * @import 'src/equipments/styles/base/functions';
+ * Ex. width: pxToRem(0.75rem);
+ *
+ */
+@function pxToRem($size) {
+  @return $size / 16px * 1rem;
+}

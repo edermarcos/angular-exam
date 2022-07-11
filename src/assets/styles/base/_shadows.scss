@@ -1,0 +1,107 @@
+/**
+ * Shadows File
+ *
+ * For more details: https://mtsdsm505363.invisionapp.com/console/DSM-ckdjcdjpd02gd013zhnh5rm6l/ckf8h3wn600io010ehfbig6zg/inspect
+ *
+ */
+
+/**
+ * Resetea la sombra de un componente
+ *
+ * Ex: @extend .dsm-shadow-0;
+ *
+ */
+.dsm-shadow-0 {
+  box-shadow: none;
+}
+
+
+
+/**
+ * Version Light
+ *
+ * Es usado para fondos claros
+ * Es necesario importar este archivo donde se ocupe
+ *
+ * Ex: @extend .dsm-light-shadow-1;
+ *
+ */
+.dsm-light-shadow-1 {
+  box-shadow: 0 0 1px 0 rgba(121, 127, 140, 0.08), 0 0.5px 2px 0 rgba(121, 127, 140, 0.16);
+}
+
+.dsm-light-shadow-2 {
+  box-shadow: 0 0 1px 0 rgba(121, 127, 140, 0.04), 0 2px 4px 0 rgba(121, 127, 140, 0.16);
+}
+
+.dsm-light-shadow-3 {
+  box-shadow: 0 0 2px 0 rgba(121, 127, 140, 0.04), 0 4px 8px 0 rgba(121, 127, 140, 0.16);
+}
+
+.dsm-light-shadow-4 {
+  box-shadow: 0 2px 4px 0 rgba(121, 127, 140, 0.04), 0 8px 16px 0 rgba(121, 127, 140, 0.16);
+}
+
+.dsm-light-shadow-5 {
+  box-shadow: 0 2px 8px 0 rgba(121, 127, 140, 0.04), 0 16px 24px 0 rgba(121, 127, 140, 0.16);
+}
+
+.dsm-light-shadow-6 {
+  box-shadow: 0 2px 8px 0 rgba(121, 127, 140, 0.08), 0 20px 32px 0 rgba(121, 127, 140, 0.24);
+}
+
+/**
+ * Sombra interna
+ * Usado para focus de un input
+ *
+ * Ex: @extend .dsm-light-inset-shadow;
+ *
+ */
+.dsm-light-inset-shadow {
+  box-shadow: inset 0 0.5px 4px 0 rgba(43, 48, 74, 0.32);
+}
+
+
+
+/**
+ * Version Dark
+ *
+ * Es usado para fondos obscuros como el martini
+ *
+ * Ex: @extend .dsm-dark-shadow-1;
+ *
+ */
+.dsm-dark-shadow-1 {
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.08), 0 0.5px 2px 0 rgba(0, 0, 0, 0.16);
+}
+
+.dsm-dark-shadow-2 {
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+}
+
+.dsm-dark-shadow-3 {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.04), 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+}
+
+.dsm-dark-shadow-4 {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.04), 0 8px 16px 0 rgba(0, 0, 0, 0.16);
+}
+
+.dsm-dark-shadow-5 {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04), 0 16px 24px 0 rgba(0, 0, 0, 0.16);
+}
+
+.dsm-dark-shadow-6 {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08), 0 20px 32px 0 rgba(0, 0, 0, 0.24);
+}
+
+/**
+ * Sombra interna
+ * Usado para focus de un input
+ *
+ * Ex: @extend .dsm-dark-inset-shadow;
+ *
+ */
+.dsm-dark-inset-shadow {
+  box-shadow: inset 0 0.5px 4px 0 rgba(15, 15, 15, 0.32);
+}

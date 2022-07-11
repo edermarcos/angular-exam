@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,600|Open+Sans:300,400,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Halant&display=swap');
+
+@import 'variables';
+@import 'mixins';
+
+// Global
+//
+*:focus {
+  outline: none !important;
+}
+
+// Prevents the scroll pushing the content
+html {
+  @include max-w(100vw);
+  overflow-x: hidden;
+}
+
+// Color System
+// Se deberia agregar el resto?
+//
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $gray-50,
+  "gray":       $gray-200,
+  "dark":       $gray-900,
+  "asset":      $equipment,
+);
+
+
+
+// Options
+//
+$enable-responsive-font-sizes:  true;
+
+
+
+// Body
+//
+$body-bg:                       #F2F3F8;
+$body-color:                    $gray-900;
+
+
+
+// Links
+//
+$link-color:                    $gray-900;
+
+
+
+// Paragraphs
+//
+$paragraph-margin-bottom:       0;
+
+
+
+// Grid columns
+//
+$grid-gutter-width:             1rem;
+
+
+
+// Components
+// Son los mismos valores de bootstrap, pero se colocan aca para usarlos en el futuro
+$border-radius:               .25rem;
+$border-radius-lg:            .3rem;
+$border-radius-sm:            .2rem;
+
+
+
+// Typography
+//
+$font-family-base:              $font-secondary;
+
+$font-size-base:                1rem;
+
+$headings-margin-bottom:        0;
+$headings-font-weight:          600;
+
+$small-font-size:               0.75rem;
+
+$text-muted:                    $gray-300;
+
+
+
+// Buttons
+//
+$btn-padding-y:                 0;
+$btn-padding-x:                 1rem;
+$btn-font-size:                 0.875rem;
+$btn-line-height:               2rem;
+$btn-white-space:               nowrap;
+$input-btn-focus-box-shadow:    none;
+
+$btn-padding-y-sm:              0;
+$btn-padding-x-sm:              1rem;
+$btn-font-size-sm:              0.75rem;
+$btn-line-height-sm:            1.5rem;
+
+
+$btn-padding-y-lg:              0;
+$btn-padding-x-lg:              1rem;
+$btn-font-size-lg:              1rem;
+$btn-line-height-lg:            2.5rem;
+
+$btn-border-width:              0;
+
+$btn-font-weight:               600;
+$btn-disabled-opacity:          1;
+
+$btn-border-radius:             0.25rem;
+$btn-border-radius-lg:          0.25rem;
+$btn-border-radius-sm:          0.25rem;
+
+
+
+// Forms
+//
+//$label-margin-bottom:         ;
+
+$input-padding-x:               0.625rem;
+$input-padding-y:               0.5rem;
+$input-font-size:               0.875rem;
+//$input-font-weight:           $font-weight-base !default;
+//$input-line-height:           $input-btn-line-height !default;
+
+$input-bg:                      $white;
+$input-disabled-bg:             $gray-50;
+
+//$input-color:                 $gray-700 !default;
+$input-border-color:            $gray-100;
+$input-border-width:            1px;
+//$input-box-shadow:            inset 0 1px 1px rgba($black, .075) !default;
+
+$input-border-radius:           0.25rem;
+
+$input-focus-border-color:      $primary;
+$input-focus-box-shadow:        none;
+
+$input-placeholder-color:       $gray-300;
+
+$input-height:                  2.5rem;
+
+$custom-control-indicator-border-width: 1px;
+
+$custom-control-indicator-focus-box-shadow: none;
+
+
+
+// Modals
+//
+$modal-header-padding:              1rem 1.5rem 0;
+// Content
+$modal-inner-padding:               1rem 1.5rem;
+$modal-content-border-width:        0;
+$modal-content-border-radius:       0.5rem;
+
+
+
+// Utilities
+//
+$user-selects:                      none;
+
+
+
+// Tables
+//
+$table-cell-padding:                1.5rem;
+$table-color:                       $gray-400;

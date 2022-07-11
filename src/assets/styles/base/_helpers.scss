@@ -1,0 +1,134 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+@import 'mixins';
+@import 'variables';
+@import '~animate.css/animate.min.css';
+
+// Box shadows
+// Custom
+//.mkt-shadow-1 {
+//  box-shadow: 0 0 1px 0 rgba(121,127,140,0.08), 0 0.5px 2px 0 rgba(121,127,140,0.16);
+//}
+//
+//.mkt-shadow-2 {
+//  box-shadow: 0 0 1px 0 rgba(121,127,140,0.04), 0 2px 4px 0 rgba(121,127,140,0.16);
+//}
+//
+//.mkt-shadow-3 {
+//  box-shadow: 0 0 2px 0 rgba(121,127,140,0.04), 0 4px 8px 0 rgba(121,127,140,0.16);
+//}
+//
+//.mkt-shadow-4 {
+//  box-shadow: 0 2px 4px 0 rgba(121,127,140,0.04), 0 8px 16px 0 rgba(121,127,140,0.16);
+//}
+//
+//.mkt-shadow-5 {
+//  box-shadow: 0 2px 8px 0 rgba(121,127,140,0.04), 0 16px 24px 0 rgba(121,127,140,0.16);
+//}
+//
+//.mkt-shadow-6 {
+//  box-shadow: 0 2px 8px 0 rgba(121,127,140,0.08), 0 20px 32px 0 rgba(121,127,140,0.24);
+//}
+
+.mkt-image {
+  @include bg-image();
+  background-color: white;
+}
+
+.mkt-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba($gray-900, 0.5);
+}
+
+.mkt-tag {
+  min-height: 1rem;
+  min-width: 115px;
+  display: flex;
+  align-items: center;
+
+  > div {
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    background-color: $danger;
+    white-space: nowrap;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    color: white;
+    padding: 0.125rem 0.5rem 0.125rem 1rem;
+    border-radius: 0.125rem;
+    position: relative;
+
+    &:before {
+      content: '';
+      @include mm-wh(0.25rem);
+      position: absolute;
+      left: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background-color: white;
+    }
+  }
+}
+
+.mkt-text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mkt-line-clamp-2,
+.mkt-line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow-y: hidden;
+}
+
+// line-clamp 2
+.mkt-line-clamp-2 {
+  -webkit-line-clamp: 2;
+}
+
+// line-clamp 3
+.mkt-line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+
+// Frequenly
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.no-cursor {
+  cursor: context-menu !important;
+}
+
+.cursor-n-allowed {
+  cursor: not-allowed;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.swal2-container {
+  z-index: 1605 !important;
+}
+
+.user-select-none {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.cke_top,
+.cke_bottom,
+.cke_chrome {
+  border: none !important;
+}
+

@@ -1,0 +1,252 @@
+/**
+ * Espacios laterales que separan el container del
+ * menu y cambian dependiendo del tamaño de pantalla
+ *
+ */
+$xs-offset: 0.5rem;
+$sm-offset: 1rem;
+$md-offset: 2rem;
+$lg-offset: 4rem;
+$xl-offset: 6rem;
+$xxl-offset: 9rem;
+
+/**
+ * Variables de los distindos tipos de fuentes a usar
+ *
+ */
+$font-primary: 'Fira Sans Condensed', futura-pt-condensed, sans-serif;
+$font-secondary: 'Open Sans', sans-serif;
+$font-tertiary: 'Halant', serif;
+
+/**
+ * Ayudan que se pueda usar los mixins de bootstrap
+ *
+ */
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+/**
+ * Ayudan que se pueda usar los mixins de bootstrap
+ *
+ */
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1300px
+);
+
+/**
+ * Variables para administrar los z-index de toda
+ * la intranet, asi evitar bugs con modales, etc
+ *
+ */
+$zi-slide: 1012; // El Tooltip solo tiene 999 de z-index
+$zi-sidebar: 1011;
+$zi-loader: 1009;
+//$zindex-modal-backdrop: 1500;
+//$zindex-modal: 1600;
+
+/**
+ * Paleta de colores
+ *
+ */
+
+// Light
+$gray-50:  #f7f8fa;
+$gray-100: #d6dde5;
+$gray-200: #b3bac4;
+$gray-300: #999faa;
+// Dark
+$gray-400: #797f8c;
+$gray-500: #5f6777;
+$gray-600: #515768;
+$gray-700: #43495e;
+$gray-800: #383e56;
+// Base: Gray
+$gray-900: #2b304a;
+
+$white:    #fff;
+$black:    #000;
+
+// Base: Primary
+$primary:       #0c75f6;
+// Opcity
+$primary-75:    rgba($primary, 0.75);
+$primary-50:    rgba($primary, 0.50);
+$primary-25:    rgba($primary, 0.25);
+$primary-10:    rgba($primary, 0.10);
+// Scale
+$primary-100:   #E8F2FE;
+$primary-200:   #BCD9FC;
+$primary-400:   #64A7F9;
+$primary-600:   #0A60CA;
+
+// Base: Secondary
+$secondary:       #00AEEF;
+// Opcity
+$secondary-75:    rgba($secondary, 0.75);
+$secondary-50:    rgba($secondary, 0.50);
+$secondary-25:    rgba($secondary, 0.25);
+$secondary-10:    rgba($secondary, 0.10);
+// Scale
+$secondary-100:   #D8F3FF;
+$secondary-300:   #89DAFF;
+$secondary-600:   #006B9D;
+$secondary-900:   #00364E;
+
+// Colores funcionales
+//
+// Base: Info
+$info:       #6894F2;
+// Opcity
+$info-75:    rgba($info, 0.75);
+$info-50:    rgba($info, 0.50);
+$info-25:    rgba($info, 0.25);
+$info-10:    rgba($info, 0.10);
+// Scale
+$info-100:   #E6EEFD;
+$info-300:   #8CAEF5;
+$info-700:   #006B9D;
+$info-900:   #00364E;
+
+// Base: Success
+$success:       #8BD91F;
+// Opcity
+$success-75:    rgba($success, 0.75);
+$success-50:    rgba($success, 0.50);
+$success-25:    rgba($success, 0.25);
+$success-10:    rgba($success, 0.10);
+// Scale
+$success-100:   #EBF9D7;
+$success-300:   #C0ED81;
+$success-700:   #6AA618;
+$success-900:   #3E610E;
+
+// Base: Warning
+$warning:       #FE9000;
+// Opcity
+$warning-75:    rgba($warning, 0.75);
+$warning-50:    rgba($warning, 0.50);
+$warning-25:    rgba($warning, 0.25);
+$warning-10:    rgba($warning, 0.10);
+// Scale
+$warning-100:   #FFEED7;
+$warning-300:   #FFCC88;
+$warning-700:   #C36F00;
+$warning-900:   #884D00;
+
+// Base: Danger
+$danger:       #C5041A;
+// Opcity
+$danger-75:    rgba($danger, 0.75);
+$danger-50:    rgba($danger, 0.50);
+$danger-25:    rgba($danger, 0.25);
+$danger-10:    rgba($danger, 0.10);
+// Scale
+$danger-100:   #FEDDE1;
+$danger-300:   #FD909D;
+$danger-700:   #B20417;
+$danger-900:   #780210;
+
+
+// Colores HR
+//
+// Base: Absences
+$absences:       #F15F5E;
+// Opcity
+$absences-75:    rgba($absences, 0.75);
+$absences-50:    rgba($absences, 0.50);
+$absences-25:    rgba($absences, 0.25);
+$absences-10:    rgba($absences, 0.10);
+// Scale
+$absences-100:   #FCDDDC;
+$absences-300:   #F69594;
+$absences-700:   #A40F0E;
+$absences-900:   #6E0A0A;
+
+// Base: Permissions
+$permissions:       #FFC024;
+// Opcity
+$permissions-75:    rgba($permissions, 0.75);
+$permissions-50:    rgba($permissions, 0.50);
+$permissions-25:    rgba($permissions, 0.25);
+$permissions-10:    rgba($permissions, 0.10);
+// Scale
+$permissions-100:   #FFF3D5;
+$permissions-300:   #FFDC86;
+$permissions-700:   #C18900;
+$permissions-900:   #866000;
+
+// Base: PTO
+$pto:       #1AD7E5;
+// Opcity
+$pto-75:    rgba($pto, 0.75);
+$pto-50:    rgba($pto, 0.50);
+$pto-25:    rgba($pto, 0.25);
+$pto-10:    rgba($pto, 0.10);
+// Scale
+$pto-100:   #DCF9FB;
+$pto-300:   #95EDF3;
+$pto-700:   #14A5B0;
+$pto-900:   #0E747B;
+
+// Base: Vacations
+$vacations:       #378EF7;
+// Opcity
+$vacations-75:    rgba($vacations, 0.75);
+$vacations-50:    rgba($vacations, 0.50);
+$vacations-25:    rgba($vacations, 0.25);
+$vacations-10:    rgba($vacations, 0.10);
+// Scale
+$vacations-100:   #E1EEFE;
+$vacations-300:   #95C3FB;
+$vacations-700:   #0754B1;
+$vacations-900:   #053979;
+
+$equipment:       #7719AA;
+// Opcity
+$equipment-75:    rgba($equipment, 0.75);
+$equipment-50:    rgba($equipment, 0.50);
+$equipment-25:    rgba($equipment, 0.25);
+$equipment-10:    rgba($equipment, 0.10);
+
+$equipment-100:   #e0bde9;
+$equipment-300:   #b865ce;
+$equipment-700:   #641299;
+$equipment-900:   #47087F;
+
+
+
+/**
+ * Init page
+ *
+ */
+// Ancho del sidebar
+$sidebar-w: 16rem;
+
+// Altura del navbar
+$navbar-h: 6.5rem;
+
+// Espacio top / bottom de la pagina
+$topBottomSpace: 40px;
+
+
+
+
+
+
+
+
+
+
+// Todo Acomodar esta parte
+$border-color: rgba(214, 221, 229, 0.5);
+

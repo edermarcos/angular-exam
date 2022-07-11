@@ -1,0 +1,37 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+//.mkt-nav {
+//  @extend .mkt-shadow-2;
+//  background-color: white;
+//  padding: 0.25rem 1rem;
+//  display: flex;
+//
+//  &__item {
+//    @include dsm-transition(color);
+//    padding: 1rem;
+//    margin: 0 0.25rem;
+//    text-transform: uppercase;
+//    font-weight: 700;
+//    color: $gray-100;
+//
+//    &:hover {
+//      cursor: pointer;
+//      color: $gray-300;
+//    }
+//
+//    &:last-child {
+//      margin-right: 0;
+//    }
+//
+//    &.active {
+//      color: $primary;
+//      box-shadow: 0 0.25rem 0 0 $accent;
+//    }
+//
+//    &.options {
+//      margin-left: auto;
+//      color: $gray-900;
+//    }
+//  }
+//}
